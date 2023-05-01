@@ -5,6 +5,12 @@ programs over the EWMH property of the root window (used by dwm(1)) or
 standard input/output. It is designed to be as efficient as possible by
 only issuing the minimum of system calls required. It's one of suckless utilities, more info [here](http://tools.suckless.org/slstatus/).
 
+## Patches
+
+As this is my own build, I've added some patches to it.
+
+- [backlight](http://tools.suckless.org/slstatus/patches/backlight/)
+
 ## Features
 
 - Battery percentage/state/time left
