@@ -10,6 +10,7 @@ only issuing the minimum of system calls required. It's one of suckless utilitie
 As this is my own build, I've added some patches to it.
 
 - [backlight](http://tools.suckless.org/slstatus/patches/backlight/)
+- [alsa](http://tools.suckless.org/slstatus/patches/alsa/)
 
 ## Features
 
