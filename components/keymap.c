@@ -82,5 +82,8 @@ end:
 	if (XCloseDisplay(dpy))
 		warn("XCloseDisplay: Failed to close display");
 
+	if (strcmp(layout, "gb(extd)") == 0)
+		return "uk";
+
 	return layout;
 }
