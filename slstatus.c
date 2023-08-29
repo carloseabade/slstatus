@@ -6,7 +6,11 @@
 #include <string.h>
 #include <time.h>
 #include <X11/Xlib.h>
-
+#include <locale.h>
+/*
+https://unicode.scarfboy.com/?s=%E2%97%BC
+Use unicode, acho q vai precisar usar o tipo wchar_t para retornar unicode da funcao
+*/
 #include "arg.h"
 #include "slstatus.h"
 #include "util.h"
@@ -47,6 +51,7 @@ usage(void)
 int
 main(int argc, char *argv[])
 {
+  setlocale(LC_CTYPE, "");
 	struct sigaction act;
 	struct timespec start, current, diff, intspec, wait;
 	size_t i, len;

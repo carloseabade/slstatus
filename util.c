@@ -139,3 +139,25 @@ pscanf(const char *path, const char *fmt, ...)
 
 	return (n == EOF) ? -1 : n;
 }
+
+const char*
+fmt_bar(double num, char kind)
+{
+  long unsigned perc = num / 10;
+  printf("perc %ld\nnum %f\n", perc, num);
+  char *bar;
+  bar = malloc(11);
+  strcpy(bar, "▭▭▭▭▭▭▭▭▭▭");
+
+  switch (kind) {
+  case 's':
+    int i;
+    for (i=0; i<perc; i++) {
+      bar[i] = '◼';
+    }
+    return bar;
+  default:
+    warn("fmt_bar: Invalid kind");
+    return "null";
+  }
+}
