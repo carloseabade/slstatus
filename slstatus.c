@@ -91,10 +91,11 @@ main(int argc, char *argv[])
         strcpy(fmt, "");
       } else {
         strcpy(fmt, args[i].fmt);
+        strcat(fmt, "%s");
       }
 
 			if ((ret = esnprintf(status + len, sizeof(status) - len,
-			                     fmt, res)) < 0)
+			                     fmt, res, SPACER)) < 0)
 				break;
 
 			len += ret;
