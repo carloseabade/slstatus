@@ -53,6 +53,7 @@ main(int argc, char *argv[])
 	int sflag, ret;
 	char status[MAXLEN];
 	const char *res;
+	char fmt[50];
 
 	sflag = 0;
 	ARGBEGIN {
@@ -85,11 +86,15 @@ main(int argc, char *argv[])
 
 		status[0] = '\0';
 		for (i = len = 0; i < LEN(args); i++) {
-			if (!(res = args[i].func(args[i].args)))
+			if (!(res = args[i].func(args[i].args))) {
 				res = unknown_str;
+        strcpy(fmt, "");
+      } else {
+        strcpy(fmt, args[i].fmt);
+      }
 
 			if ((ret = esnprintf(status + len, sizeof(status) - len,
-			                     args[i].fmt, res)) < 0)
+			                     fmt, res)) < 0)
 				break;
 
 			len += ret;
