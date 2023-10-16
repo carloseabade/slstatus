@@ -66,16 +66,19 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
+
+const char SPACER[] = "  ";
+
 static const struct arg args[] = {
 	/* function format              argument */
-        { keymap,         " %s",       "NULL" },
-        { vol_perc,       " [V %s%%]", "Master" },
-        { backlight_perc, " [B %s%%]", "intel_backlight" },
-        { wifi_essid,     " [%s]",     "wlan0" },
-        { cpu_perc,       " [C %s%%|", "NULL" },
-        { disk_perc,      "D %s%%|",   "/" },
-        { ram_perc,       "R %s%%]",   "NULL" },
-        { battery_perc,   " [%s%%",    "BAT1" },
-        { temp,           "|%sºC]",    "/sys/class/thermal/thermal_zone0/temp" },
-        { datetime,       " [%s] ",    "%a, %d %b %R" },
+        { keymap,         "kmap:%s",       "NULL" },
+        { vol_perc,       "vol:%s", "Master" },
+        { backlight_perc, "brt:%s",   "intel_backlight" },
+        { wifi_essid,     "wifi:%s",     "wlan0" },
+        { cpu_perc,       "cpu:%s%%", "NULL" },
+        { disk_perc,      "disk:%s%%",   "/" },
+        { ram_perc,       "ram:%s%%",   "NULL" },
+        { battery_perc,   "bat:%s%%",    "BAT1" },
+        { temp,           "temp:%sºC",    "/sys/class/thermal/thermal_zone0/temp" },
+        { datetime,       "[%s]",    "%a, %d %b %R" },
 };
