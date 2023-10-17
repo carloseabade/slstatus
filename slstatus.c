@@ -91,7 +91,6 @@ main(int argc, char *argv[])
         strcpy(fmt, "");
       } else {
         strcpy(fmt, args[i].fmt);
-        strcat(fmt, SPACER);
       }
 
 			if ((ret = esnprintf(status + len, sizeof(status) - len,
