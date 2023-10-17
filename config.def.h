@@ -67,18 +67,17 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 
-const char SPACER[] = "  ";
-
 static const struct arg args[] = {
 	/* function format              argument */
-        { keymap,         "kmap:%s",       "NULL" },
-        { vol_perc,       "vol:%s", "Master" },
-        { backlight_perc, "brt:%s",   "intel_backlight" },
-        { wifi_essid,     "wifi:%s",     "wlan0" },
-        { cpu_perc,       "cpu:%s%%", "NULL" },
-        { disk_perc,      "disk:%s%%",   "/" },
-        { ram_perc,       "ram:%s%%",   "NULL" },
-        { battery_perc,   "bat:%s%%",    "BAT1" },
-        { temp,           "temp:%sºC",    "/sys/class/thermal/thermal_zone0/temp" },
-        { datetime,       "[%s]",    "%a, %d %b %R" },
+        { keymap,         "%s |",       "NULL" },
+        { vol_perc,       " vol:%s ", "Master" },
+        { backlight_perc, " brt:%s ",   "intel_backlight" },
+        { wifi_essid,     " wifi:%s ",     "wlan0" },
+        { cpu_perc,       " cpu:%s%% ", "NULL" },
+        { disk_perc,      " disk:%s%% ",   "/" },
+        { ram_perc,       " ram:%s%% ",   "NULL" },
+        { battery_state,   " bat:%s",    "BAT1" },
+        { battery_perc,   "%s%% ",    "BAT1" },
+        { temp,           " temp:%sºC ",    "/sys/class/thermal/thermal_zone0/temp" },
+        { datetime,       "| %s",    "%a, %d %b %R" },
 };
