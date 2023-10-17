@@ -51,7 +51,7 @@ keymap(const char *unused)
 	XkbDescRec *desc;
 	XkbStateRec state;
 	char *symbols;
-	const char *layout;
+	char *layout;
 
 	layout = NULL;
 
@@ -83,7 +83,12 @@ end:
 		warn("XCloseDisplay: Failed to close display");
 
 	if (strcmp(layout, "gb(extd)") == 0)
-		return "uk";
+		strcpy(layout, "uk");
+
+  int i;
+  for (i = 0; i < strlen(layout); i++) {
+    layout[i] = toupper(layout[i]);
+  }
 
 	return layout;
 }
